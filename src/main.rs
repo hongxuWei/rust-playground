@@ -1,3 +1,6 @@
+mod hello;
+use hello::hello;
+
 fn main() {
-    println!("Hello, world!");
+    hello();
 }
