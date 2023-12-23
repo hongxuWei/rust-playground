@@ -1,12 +1,22 @@
 mod hello;
+mod variable;
+mod data_type;
+mod utils;
 
 fn main() {
   let args: Vec<String> = std::env::args().collect();
-  let run_mod = &args[1];
+  let run_mode = args.get(1);
 
-  let _hello: String = String::from("hello");
-
-  match run_mod {
-    _hello => hello::hello(),
+  if let Some(mode) = run_mode {
+    match mode.as_str() {
+      "hello" => hello::run_hello(),
+      "variable" => variable::run_variable(),
+      "data-type" => data_type::run_data_type(),
+      _ => {
+        println!("{} 没有该命令，", mode);
+      }
+    }
+  } else {
+    println!("没有找到任何可用的运行模式。 请执行：cargo run [mode]");
   }
 }

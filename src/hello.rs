@@ -1,8 +1,4 @@
-pub fn hello() {
-  format_print();
-}
-
-fn format_print() {
+pub fn run_hello() {
   println!("Hello, world!");
 
   println!("{} days", 31);
@@ -35,5 +31,4 @@ fn format_print() {
   let number: f64 = 1.0;
   let width: usize = 2;
   println!("{number:>width$}");
-
 }
