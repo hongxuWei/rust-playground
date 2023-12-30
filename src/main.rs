@@ -2,6 +2,7 @@ mod hello;
 mod variable;
 mod data_type;
 mod utils;
+mod function;
 
 fn main() {
   let args: Vec<String> = std::env::args().collect();
@@ -12,6 +13,7 @@ fn main() {
       "hello" => hello::run_hello(),
       "variable" => variable::run_variable(),
       "data-type" => data_type::run_data_type(),
+      "fn" => function::run_fn(),
       _ => {
         println!("{} 没有该命令，", mode);
       }
