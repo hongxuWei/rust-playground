@@ -3,6 +3,7 @@ mod variable;
 mod data_type;
 mod utils;
 mod function;
+mod control_flow;
 
 fn main() {
   let args: Vec<String> = std::env::args().collect();
@@ -14,6 +15,7 @@ fn main() {
       "variable" => variable::run_variable(),
       "data-type" => data_type::run_data_type(),
       "fn" => function::run_fn(),
+      "control-flow" => control_flow::run_control_flow(),
       _ => {
         println!("{} 没有该命令，", mode);
       }
